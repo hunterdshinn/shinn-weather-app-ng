@@ -1,0 +1,53 @@
+<!-- push notification -->
+<push-notification></push-notification>
+
+<!-- banner -->
+<div class="jumbotron jumbotron-fluid bg-primary mb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mx-auto text-center">
+        <img src="../../assets/img/dash-logo.png" alt="MyWeather" class="img-fluid" width="200px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto">
+      <!-- weather search form -->
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="input-group input-group-lg">
+          <input 
+            type="text" 
+            class="form-control bg-light"
+            placeholder="Search weather by city name or zip code..."
+            aria-label="Search weather by city name or zip code..."
+            aria-describedby="basic-addon2"
+            ngModel
+            name="weatherSearchData"
+          >
+          <div class="input-group-append">
+            <button 
+              class="btn bg-success text-light"
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+        <!-- error message -->
+        <label *ngIf="error" class="form-text text-light text-center">
+          Location not found. Make sure that you are entering a city name or zip code. 
+        </label>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 mt-5 mx-auto">
+      <p *ngIf="isLoading" class="text-center text-light lead">Loading the weather...</p>
+      <app-new-weather-location></app-new-weather-location>
+    </div>
+  </div>
+</div>
+

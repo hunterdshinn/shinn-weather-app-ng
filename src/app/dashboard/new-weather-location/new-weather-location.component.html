@@ -1,0 +1,40 @@
+<div class="card shadow text-dark bg-light" *ngIf="locationWeatherData.city !== ''">
+  <!-- image for type of weather -->
+  <div class="card-body">
+    <h2 class="card-title">{{ locationWeatherData.city }}</h2>
+    <hr>
+    <div class="p-3 text-center">
+      <h2 class="card-text display-3"><strong>{{ locationWeatherData.temp | number: '1.0-0' }}°</strong></h2>
+      <p class="card-text lead">
+        {{ locationWeatherData.conditions }}
+        <span><img [src]="locationWeatherData.icon"></span>
+      </p>
+      <span class="card-text lead">High: {{ locationWeatherData.tempMax | number: '1.0-0' }}°</span>
+      <span class="card-text lead ml-2">Low: {{ locationWeatherData.tempMin | number: '1.0-0' }}°</span>
+    </div>
+    <div class="p-2">
+      <p class="card-text lead">Pressure: {{ locationWeatherData.pressure }} mb</p>
+    </div>
+    <div class="p-2">
+      <p class="card-text lead">Wind Speed: {{ locationWeatherData.windSpeed }} mph</p>
+    </div>
+    <div class="p-2">
+      <p class="card-text lead">Humidity: {{ locationWeatherData.humidity }}%</p>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button 
+        (click)="saveLocation()" 
+        class="btn btn-primary"
+        *ngIf="!saved"
+        >
+        Save Location
+      </button>
+      <p 
+        class="card-text text-primary" 
+        *ngIf="saved"
+      >
+        Saved!
+      </p>
+    </div>
+  </div>
+</div>
