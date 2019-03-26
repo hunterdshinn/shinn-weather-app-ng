@@ -7,8 +7,8 @@ import { UIService } from './ui.service';
 export class WeatherService {
   // api properties
   private apiKey: string = '&appid=796a7a198d2f67becf32918b487b2906'
-  private cityEndpoint: string = 'http://api.openweathermap.org/data/2.5/weather?q='
-  private zipEndpoint: string = 'http://api.openweathermap.org/data/2.5/weather?zip='
+  private cityEndpoint: string = 'https://api.openweathermap.org/data/2.5/weather?q='
+  private zipEndpoint: string = 'https://api.openweathermap.org/data/2.5/weather?zip='
   private units: string = '&units=imperial'
 
   // subject observable to broadcast when there is an error in the weather location search
@@ -74,7 +74,7 @@ export class WeatherService {
         locationData.push({
           name: res.name,
           conditions: res.weather[0].main,
-          icon: 'http://openweathermap.org/img/w/' + res.weather[0].icon + '.png',
+          icon: 'https://openweathermap.org/img/w/' + res.weather[0].icon + '.png',
           temp: res.main.temp, 
           tempMin: res.main.temp_min,
           tempMax: res.main.temp_max,
@@ -113,7 +113,7 @@ export class WeatherService {
 
           this.searchedLocationData.city = res.name
           this.searchedLocationData.conditions = res.weather[0].main
-          this.searchedLocationData.icon = 'http://openweathermap.org/img/w/' + res.weather[0].icon + '.png'
+          this.searchedLocationData.icon = 'https://openweathermap.org/img/w/' + res.weather[0].icon + '.png'
           this.searchedLocationData.temp = res.main.temp
           this.searchedLocationData.tempMin = res.main.temp_min
           this.searchedLocationData.tempMax = res.main.temp_max
@@ -138,7 +138,7 @@ export class WeatherService {
 
           this.searchedLocationData.city = res.name
           this.searchedLocationData.conditions = res.weather[0].main
-          this.searchedLocationData.icon = 'http://openweathermap.org/img/w/' + res.weather[0].icon + '.png'
+          this.searchedLocationData.icon = 'https://openweathermap.org/img/w/' + res.weather[0].icon + '.png'
           this.searchedLocationData.temp = res.main.temp
           this.searchedLocationData.tempMin = res.main.temp_min
           this.searchedLocationData.tempMax = res.main.temp_max
