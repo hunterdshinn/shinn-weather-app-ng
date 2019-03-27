@@ -16,6 +16,6 @@ export class PastWeatherLocationsComponent implements OnInit{
     this.weatherService.setSavedLocationData()
 
     // getting the saved weather data to be displayed
-    this.savedLocationData = this.weatherService.getSavedLocationData()
+    this.savedLocationData = this.weatherService.getSavedLocationData() 
   }
 }

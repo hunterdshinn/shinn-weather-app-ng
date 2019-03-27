@@ -1,16 +1,3 @@
-<!-- banner for user with no saved locations -->
-<div *ngIf="!savedLocationData" class="jumbotron jumbotron-fluid bg-primary mb-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 mx-auto text-center">
-        <p class="lead text-light">
-          This is where you'll find your saved locations. To get started, add a location from the dashboard.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
     <div class="col-lg-4 mt-5" *ngFor="let location of savedLocationData">
@@ -41,3 +28,4 @@
     </div>
   </div>
 </div>
+

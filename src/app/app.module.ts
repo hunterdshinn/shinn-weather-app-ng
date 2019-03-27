@@ -43,7 +43,6 @@ const config = {
     NewWeatherLocationComponent,
     SignInComponent,
     PushNotificationComponent
-    
   ],
   imports: [
     BrowserModule,
