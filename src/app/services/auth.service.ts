@@ -75,7 +75,7 @@ export class AuthService {
     this.db.collection('savedCities')
     .valueChanges()
     .subscribe((savedLocations) => {
-      this.weatherService.setSavedLocations(savedLocations)
+      this.weatherService.setSavedLocations(savedLocations, this.uid)
     }, (error) => {
       // console.log(error)
     })

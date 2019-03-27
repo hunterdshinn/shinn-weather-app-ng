@@ -54,11 +54,15 @@ export class WeatherService {
   }
 
   // setting the users saved locations off of db
-  setSavedLocations(savedLocations) {
+  setSavedLocations(savedLocations, uid) {
+    const currentUser = uid
     const locations = []
 
+    // only returning the current user's saved locations
     savedLocations.forEach((location) => {
-      return locations.push(location.cityName)
+      if (location.uid === currentUser) {
+        return locations.push(location.cityName)
+      }
     })
 
     this.userLocations = locations
