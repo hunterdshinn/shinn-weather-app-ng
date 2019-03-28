@@ -1,4 +1,18 @@
-<div class="container">
+<!-- banner if user hasn't saved any locations yet -->
+<div class="jumbotron jumbotron-fluid bg-primary mb-0" *ngIf="hasSaved === false">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mx-auto text-center">
+        <p class="lead text-light fade-in">
+          This is where you'll find your saved locations. To get started, add a location from the dashboard.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- saved location cards -->
+<div class="container" *ngIf="hasSaved === true">
   <div class="row">
     <div class="col-lg-4 mt-5" *ngFor="let location of savedLocationData">
       <div class="card shadow text-dark bg-light fade-in">
