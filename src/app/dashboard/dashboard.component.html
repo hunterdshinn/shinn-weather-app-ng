@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 mx-auto text-center">
-        <img src="../../assets/img/dash-logo.png" alt="MyWeather" class="img-fluid" width="200px;">
+        <img src="../../assets/img/dash-logo.png" alt="MyWeather" class="img-fluid banner-image">
       </div>
     </div>
   </div>
@@ -17,24 +17,28 @@
     <div class="col-lg-6 mx-auto">
       <!-- weather search form -->
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="input-group input-group-lg">
-          <input 
-            type="text" 
-            class="form-control bg-light"
-            placeholder="Search weather by city name or zip code..."
-            aria-label="Search weather by city name or zip code..."
-            aria-describedby="basic-addon2"
-            ngModel
-            name="weatherSearchData"
-          >
-          <div class="input-group-append">
-            <button 
-              class="btn bg-success text-light"
-              type="submit"
+        <div class="form-row">
+          <div class="col-sm-9">
+            <input 
+              type="text" 
+              class="form-control form-control-lg bg-light small-font"
+              placeholder="Search weather by city name or zip code..."
+              aria-label="Search weather by city name or zip code..."
+              aria-describedby="basic-addon2"
+              ngModel
+              name="weatherSearchData"
             >
-              Search
-            </button>
           </div>
+          <div class="col">
+            <div class="d-flex justify-content-end">
+              <button 
+                class="btn btn-block btn-lg bg-success text-light small-font"
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+          </div>  
         </div>
         <!-- error message -->
         <label *ngIf="error" class="form-text text-light text-center">

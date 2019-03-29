@@ -13,14 +13,14 @@
 
 <!-- saved location cards -->
 <div class="container" *ngIf="hasSaved === true">
-  <div class="row">
+  <div class="row sm-margin">
     <div class="col-lg-4 mt-5" *ngFor="let location of savedLocationData">
       <div class="card shadow text-dark bg-light fade-in">
         <div class="card-body">
-          <h2 class="card-title">{{ location.name }}</h2>
+          <h2 class="card-title sm-title">{{ location.name }}</h2>
           <hr>
           <div class="p-3 text-center">
-            <h2 class="card-text display-3"><strong>{{ location.temp | number: '1.0-0'}}°</strong></h2>
+            <h2 class="card-text display-3 sm-temp"><strong>{{ location.temp | number: '1.0-0'}}°</strong></h2>
             <p class="card-text lead">
               {{ location.conditions }}
               <span><img [src]="location.icon"></span>
